@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.m9pang.mic.Debug">
+
+    <ToggleButton
+        android:id="@+id/on"
+        android:layout_width="113dp"
+        android:layout_height="66dp"
+        android:checked="false"
+        android:onClick="tog"
+        android:text="ToggleButton"
+        android:textOff="OFF"
+        android:textOn="ON"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="74dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:text="dsfa"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintLeft_toRightOf="@+id/on"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/on"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="103dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:hint="numBytes"
+        android:inputType="number"
+        android:text="500"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/on" />
+
+    <Button
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setSettings"
+        android:text="Change"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText3"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read blocking"
+        app:layout_constraintLeft_toRightOf="@+id/editText3"
+        android:layout_marginLeft="16dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="@+id/editText3" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write blocking"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/checkBox" />
+
+    <CheckBox
+        android:id="@+id/useArray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="useArray"
+        app:layout_constraintLeft_toLeftOf="@+id/checkBox2"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox2"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <EditText
+        android:id="@+id/inputHz"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="inputHz"
+        android:inputType="number"
+        android:text="48000"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/editText3"
+        app:layout_constraintRight_toRightOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/outputHz"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="outputHz"
+        android:inputType="number"
+        android:text="48001"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/inputHz"
+        app:layout_constraintRight_toRightOf="@+id/inputHz"
+        app:layout_constraintTop_toBottomOf="@+id/inputHz"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <RadioGroup
+        android:id="@+id/typedd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:checkedButton="@+id/s32"
+        app:layout_constraintLeft_toLeftOf="@+id/change"
+        app:layout_constraintTop_toBottomOf="@+id/change"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <RadioButton
+            android:id="@+id/s8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="byte" />
+
+        <RadioButton
+            android:id="@+id/s16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="short" />
+
+        <RadioButton
+            android:id="@+id/s32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="float" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/audioSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:ems="10"
+        android:hint="AudioSource"
+        android:inputType="number"
+        android:text="1"
+        app:layout_constraintLeft_toRightOf="@+id/useArray"
+        app:layout_constraintTop_toBottomOf="@+id/typedd"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+</android.support.constraint.ConstraintLayout>
